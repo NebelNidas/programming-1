@@ -22,23 +22,23 @@ public class WeatherStation {
         //===========
         // Aufgabe 1
         //===========
-        int daysCount = 0;
+        int dayCount = 0;
         int sumOfAllTemperatures = 0;
 
         for (int[] dailyMeanTemperaturesOfCurrentMonth : dailyMeanTemperatures) {
             for (int dailyMeanTemperature : dailyMeanTemperaturesOfCurrentMonth) {
-                daysCount++;
+                dayCount++;
                 sumOfAllTemperatures += dailyMeanTemperature;
             }
         }
 
-        System.out.println("Die Anzahl der Tage im gegebenen Jahr ist: " + daysCount);
+        System.out.println("Die Anzahl der Tage im gegebenen Jahr ist: " + dayCount);
 
 
         //===========
         // Aufgabe 2
         //===========
-        double annualAverageTemperature = Math.round((double) sumOfAllTemperatures / daysCount * 10) / 10d;
+        double annualAverageTemperature = Math.round((double) sumOfAllTemperatures / dayCount * 10) / 10d;
 
         System.out.println("Jahresdurchschnittstemperatur: %s Grad ".formatted(annualAverageTemperature));
         System.out.println("Monatsdurchschnittstemperaturen:");
@@ -85,7 +85,7 @@ public class WeatherStation {
         //===========
         // Aufgabe 5
         //===========
-        int[] temperatures = new int[366]; // Anzahl Tage in Schaltjahr
+        int[] temperatures = new int[dayCount];
         int index = 0;
 
         for (int month = 0; month < dailyMeanTemperatures.length; month++) {
